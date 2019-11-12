@@ -1,3 +1,99 @@
-*{
-	width: 100;	
+* {
+    font-size: 20px;
+    font-family: "Century Gothic";
+    color: #fff;
+    background: #000;
+    // background-image: url("../../docs/imgs/BG.gif");
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 200px;
+    min-height: 100%;
+}
+
+.container {
+    min-height: 100%;
+    position: relative;
+}
+
+.hat {
+    box-shadow: -18px 25px 14px -8px rgba(0, 0, 0, 0.75);
+}
+
+.hattext {
+    color: #fff;
+    text-shadow: #00f7c2 1px 0 10px;
+}
+
+.logo {
+    width: 10%;
+}
+
+.grid {
+    padding-top: 120px;
+    margin-bottom: 200px;
+    margin-left: 7%;
+    margin-right: 7%;
+    text-align: center;
+}
+
+.gridcolor {
+    background: #ccc;
+}
+
+.itemcolor {
+    background: #E3F3F4;
+}
+
+.desc {
+    background: #f22ecb;
+    border: 2px solid #b03898;
+    border-radius: 15px;
+}
+
+.button {
+    border-radius: 15px;
+    border: 2px solid #6304c2;
+    background: #2cd4aa;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #00eaff;
+}
+
+.footblock {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+
+@media (min-width: 1550px) {
+    * {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    * {
+        font-size: 17px;
+    }
+
+    .logo {
+        display: none;
+		    }
+
+}
+
+@media (max-width: 500px) {
+    * {
+        font-size: 15px;
+    }
 }

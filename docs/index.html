@@ -1,13 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="./css/main.css">
-	<script src="./js/main.js"></script>
 	<meta charset="UTF-8">
-	<title>Fuck</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="./css/main.css">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <title>Abstract Shop</title>
+
 </head>
 <body>
-
-	
+    <!-- Modal -->
+    <div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="modal-cart" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cart-title">Cart</h5>
+                    <button type="button" class="btn button clear" data-dismiss="modal" aria-label="Close">
+                        Clear
+                    </button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <div class=" table-responsive-sm">
+                    <table class="show-cart table">
+                    </table>
+                  </div>
+                    <div>Total: <span class="total-price"></span> </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="hat fixed-top d-flex w-100">
+            <a href="http://google.com" class="hattext mx-auto mt-4">Catalogue</a>
+            <a href="http://google.com" class="hattext mx-auto mt-4">Favorite</a>
+            <a href="http://google.com" class="hattext mx-auto mt-4">Search</a>
+            <a class="hattext mx-auto mt-4 cart-text" data-toggle="modal" data-target="#modal-cart">Cart(
+                <span class="total-amount"></span>
+                )
+            </a>
+            <img class="logo pr-3" src="imgs/Logo.png">
+        </div>
+        <div class="grid">
+            <div class="d-block w-100 pb-3">
+                <h4>Category: Boxes</h4>
+            </div>
+            <div class="row align-items-center">
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/clothes/hat2.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Tsuki Beenie</h4>
+                        <p class="card-text desc">36$</p>
+                        <button href="#" data-name="Tsuki_Beenie" data-price="36" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/clothes/hat1.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Tsuki Bucket Hat#1</h4>
+                        <p class="card-text desc">34$</p>
+                        <button data-name="Tsuki_Bucket_Hat#1" data-price="34" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/clothes/hat3.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Tsuki Bucket Hat#2</h4>
+                        <p class="card-text desc">35$</p>
+                        <button data-name="Tsuki_Bucket_Hat#2" data-price="35" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/clothes/hat4.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Tsuki Cap</h4>
+                        <p class="card-text desc">35$</p>
+                        <button data-name="Tsuki_Cap" data-price="35" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/clothes/shirt1.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Tsuki Space Shirt</h4>
+                        <p class="card-text desc">35$</p>
+                        <button data-name="Tsuki_Space_Shirt" data-price="35" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/clothes/socks1.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Tsuki Socks</h4>
+                        <p class="card-text desc">15$</p>
+                        <button data-name="Tsuki_Socks" data-price="15" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/clothes/badge1.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Tsuki Badges</h4>
+                        <p class="card-text desc">15$</p>
+                        <button data-name="Tsuki_Badges" data-price="15" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block w-100 pb-3">
+                <h4>You may also like</h4>
+            </div>
+            <div class="row align-items-center">
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/abstract/hands.jpg" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">A Pair Of Hands</h4>
+                        <p class="card-text desc">100$</p>
+                        <button data-name="Pair_of_hands" data-price="100" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/abstract/monalisa.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Totally Real Mona Lisa</h4>
+                        <p class="card-text desc">33.3$</p>
+                        <button data-name="Mona_Lisa" data-price="33.3" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/music/blackpaint.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Black Paint</h4>
+                        <p class="card-text desc">10$</p>
+                        <button data-name="Black_Paint" data-price="10" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
+                    <img class="card-img-top" src="imgs/music/kanye.png" alt="Card image">
+                    <div class="card-body gridcolor">
+                        <h4 class="card-title desc">Kanye West</h4>
+                        <p class="csard-text desc">50 cents</p>
+                        <button data-name="Ye" data-price="0.5" class="button w-100 add-to-cart">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footblock d-block w-100 mb-3 modal-footer">
+        rights reserved probably<br>
+        all these websites are belong to us:<br>
+        Email: MSUA1307@gmail.com<br>
+        Phone number: I shall not give it away<br>
+        Buy my album: <a href="https://nullharmony.bandcamp.com/releases">nullharmony.bandcamp.com</a>
+    </div>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html>

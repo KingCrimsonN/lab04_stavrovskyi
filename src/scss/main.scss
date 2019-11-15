@@ -3,7 +3,7 @@
     font-family: "Century Gothic";
     color: #fff;
     background: #000;
-    // background-image: url("../../docs/imgs/BG.gif");
+    // background-image: url("..//imgs/Logo.png");
     text-decoration: none;
 }
 
@@ -12,24 +12,55 @@ body {
     margin: 0;
     padding-bottom: 200px;
     min-height: 100%;
+      background: #000;
+      background-color: #000;
 }
 
 .container {
     min-height: 100%;
     position: relative;
+    background: #000;
+    // box-shadow: 0px 25px 14px -8px rgba(0, 200, 100, 0.75);
 }
 
 .hat {
-    box-shadow: -18px 25px 14px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 25px 14px -8px rgba(0, 200, 100, 0.75);
+    background: #000;
 }
 
 .hattext {
+    // padding-right: 100px;
     color: #fff;
     text-shadow: #00f7c2 1px 0 10px;
+    text-align: center;
+}
+
+.drop-d{
+    padding: 100px;
+}
+
+.item_modal{
+    background-color: transparent;
+    background: transparent;
+}
+
+.image-card{
+    width: auto;
+    height: 0;
+    padding-top: 100%;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.img{
+    height: inherit;
+    width: inherit;
 }
 
 .logo {
-    width: 10%;
+    width: 30%;
 }
 
 .grid {
@@ -38,7 +69,16 @@ body {
     margin-left: 7%;
     margin-right: 7%;
     text-align: center;
+
 }
+
+.drop-content{
+    
+    display: hidden;
+    position: absolute;
+}
+
+
 
 .gridcolor {
     background: #ccc;
@@ -49,9 +89,15 @@ body {
 }
 
 .desc {
+    font-size: 20px;
     background: #f22ecb;
     border: 2px solid #b03898;
     border-radius: 15px;
+}
+
+.prev-price{
+    text-decoration: line-through;
+    background: inherit;
 }
 
 .button {
@@ -59,6 +105,10 @@ body {
     border: 2px solid #6304c2;
     background: #2cd4aa;
 }
+// .item{
+//     width: 145px;
+//     height: 100%;
+// }
 
 .button:hover {
     cursor: pointer;

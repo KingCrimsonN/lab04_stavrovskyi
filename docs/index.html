@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/main.css">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
     <title>Abstract Shop</title>
-
 </head>
+
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="modal-cart" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
+    <!-- Modal for Cart -->
+    <div class="modal fade " id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="modal-cart" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content ">
+                <div class="modal-header ">
                     <h5 class="modal-title" id="cart-title">Cart</h5>
                     <button type="button" class="btn button clear" data-dismiss="modal" aria-label="Close">
                         Clear
@@ -24,127 +25,100 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                  <div class=" table-responsive-sm">
-                    <table class="show-cart table">
-                    </table>
-                  </div>
+                    <div class=" table-responsive-sm">
+                        <table class="show-cart table">
+                        </table>
+                    </div>
                     <div>Total: <span class="total-price"></span> </div>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary purchase" data-toggle="modal" data-target="#modal-login">Purchase</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="hat fixed-top d-flex w-100">
-            <a href="http://google.com" class="hattext mx-auto mt-4">Catalogue</a>
-            <a href="http://google.com" class="hattext mx-auto mt-4">Favorite</a>
-            <a href="http://google.com" class="hattext mx-auto mt-4">Search</a>
-            <a class="hattext mx-auto mt-4 cart-text" data-toggle="modal" data-target="#modal-cart">Cart(
-                <span class="total-amount"></span>
-                )
-            </a>
-            <img class="logo pr-3" src="imgs/Logo.png">
+    <!-- Modal for Items -->
+    <div class="modal fade item_modal" id="modal-items" tabindex="-1" role="dialog" aria-labelledby="modal-items" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <h5 class="modal-title" id="cart-title">Item info</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class=" item-info-content">
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <!-- Modal for login -->
+    <div class="modal fade login_modal" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <h5 class="modal-title" id="cart-title">Enter your information</h5>
+                    <button type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right ">Name:</label>
+                        <input class="login" id="buyer-name">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right ">E-Mail Address:</label>
+                        <input class="email" id="email">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right">Phone:</label>
+                            <input class="phone" id = "phone">
+                    </div>
+                    <div class="col-md-6 offset-md-4">
+                        <button class="button submit btn">
+                            Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="hat navbar navbar-expand-sm sticky-top d-flex justify-content-center">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <!-- Dropdown with categories -->
+            <div class="dropdown d-flex justify-content-center">
+                <a class="hattext dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categoties
+                </a>
+                <div class="hattext dropdown-menu bg-dark category-list category-dropdown" aria-labelledby="dropdownMenuLink">
+                </div>
+            </div>
+            <!-- End of Dropdown -->
+            <ul class="navbar-nav mx-auto w-100">
+                <a class="hattext mx-auto" href="#">Search</a>
+                <a class="nav-item hattext mx-auto" data-toggle="modal" data-target="#modal-cart">Cart(
+                    <span class="total-amount"></span>)
+                </a>
+                <a class="hattext mx-auto" href="#">Profile</a>
+            </ul>
+        </div>
+        <a class="navbar-brand" href="#">
+            <img src="imgs\Logo.png" width="100" height="60" class="d-inline-block align-top" alt="">
+        </a>
+    </nav>
+    <div class="container">
         <div class="grid">
-            <div class="d-block w-100 pb-3">
-                <h4>Category: Boxes</h4>
+            <div class="d-block w-100 pb-3 category">
             </div>
-            <div class="row align-items-center">
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/clothes/hat2.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Tsuki Beenie</h4>
-                        <p class="card-text desc">36$</p>
-                        <button href="#" data-name="Tsuki_Beenie" data-price="36" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/clothes/hat1.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Tsuki Bucket Hat#1</h4>
-                        <p class="card-text desc">34$</p>
-                        <button data-name="Tsuki_Bucket_Hat#1" data-price="34" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/clothes/hat3.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Tsuki Bucket Hat#2</h4>
-                        <p class="card-text desc">35$</p>
-                        <button data-name="Tsuki_Bucket_Hat#2" data-price="35" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/clothes/hat4.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Tsuki Cap</h4>
-                        <p class="card-text desc">35$</p>
-                        <button data-name="Tsuki_Cap" data-price="35" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/clothes/shirt1.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Tsuki Space Shirt</h4>
-                        <p class="card-text desc">35$</p>
-                        <button data-name="Tsuki_Space_Shirt" data-price="35" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/clothes/socks1.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Tsuki Socks</h4>
-                        <p class="card-text desc">15$</p>
-                        <button data-name="Tsuki_Socks" data-price="15" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/clothes/badge1.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Tsuki Badges</h4>
-                        <p class="card-text desc">15$</p>
-                        <button data-name="Tsuki_Badges" data-price="15" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="d-block w-100 pb-3">
-                <h4>You may also like</h4>
-            </div>
-            <div class="row align-items-center">
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/abstract/hands.jpg" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">A Pair Of Hands</h4>
-                        <p class="card-text desc">100$</p>
-                        <button data-name="Pair_of_hands" data-price="100" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/abstract/monalisa.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Totally Real Mona Lisa</h4>
-                        <p class="card-text desc">33.3$</p>
-                        <button data-name="Mona_Lisa" data-price="33.3" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/music/blackpaint.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Black Paint</h4>
-                        <p class="card-text desc">10$</p>
-                        <button data-name="Black_Paint" data-price="10" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
-                <div class="card pb-3 col-lg-3 col-md-4 col-sm-6">
-                    <img class="card-img-top" src="imgs/music/kanye.png" alt="Card image">
-                    <div class="card-body gridcolor">
-                        <h4 class="card-title desc">Kanye West</h4>
-                        <p class="csard-text desc">50 cents</p>
-                        <button data-name="Ye" data-price="0.5" class="button w-100 add-to-cart">Buy</button>
-                    </div>
-                </div>
+            <div class="row align-items-top items">
             </div>
         </div>
     </div>
@@ -159,4 +133,5 @@
     <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 </body>
+
 </html>

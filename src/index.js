@@ -77,7 +77,6 @@ $.ajax({
                 "</div>" +
                 "</div>" +
                 "</div>";
-                console.log("id: " + i.id);
         }
         $('.items').html(output);
         $('.category').html(output1);
@@ -117,12 +116,13 @@ $('.category-dropdown').on("click", ".dropdown-item", function(event) {
                 "<div class='card-body d-flex flex-column gridcolor'>" +
                 "<h4 class='card-title desc'>" + i.name + "</h4>" +
                     p +
-                "<button data-name='" + i.name + "' data-image='" + i.image_url + "' data-price='" +
+                "<div class='btn-group-vertical item_modal mt-auto w-100'><button data-name='" + i.name + "' data-image='" + i.image_url + "' data-price='" +
                 i.price + "' data-sp-price='" + i.special_price + "' data-desc='" + i.description +
-                "' data-idd='" + i.id +  "'class='button w-100 item-info' data-toggle='modal' data-target='#modal-items'>Info</button>" +
+                "' data-idd='" + i.id +  "' class='button w-100 item-info' data-toggle='modal' data-target='#modal-items'>Info</button>" +
 
                 "<button data-name='" + i.name + "' data-price='" + i.price + "' data-sp-price='" + i.special_price +
                 "' data-desc='" + i.description + "' data-idd='" + i.id + "' class='button mt-auto w-100 add-to-cart'>Buy</button>" +
+                "</div>" + 
                 "</div>" +
                 "</div>" +
                 "</div>";
@@ -290,6 +290,8 @@ $('.submit').click(function() {
         alert("Please enter your name");
     else if (email==="")
         alert("Please enter your email");
+    else if (!email.includes("@"))
+        alert ("Incorrect email");
     else if (phone==="")
         alert("Please enter your phone");
     else{

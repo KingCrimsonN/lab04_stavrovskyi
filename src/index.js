@@ -20,7 +20,6 @@ function sumbitPost(buyer, email, phone, cartarr){
         showCart();
     },
     error: function() {
-        console.log(type);
         alert('Error while loading data!');
     },
 });
@@ -94,7 +93,6 @@ $('.category-dropdown').on("click", ".dropdown-item", function(event) {
         success: function(content) {
             var output = "";
             var output1 = "<h4>Category: " + cat_name + " </h4>";
-            console.log(content);
              var output1 = "<h4>Category: Smartphones</h4>";
         for (var i of content) {
             var p, sp;
@@ -107,7 +105,6 @@ $('.category-dropdown').on("click", ".dropdown-item", function(event) {
             "<a class=card-text> " + i.special_price + "</a></p>";
             sp = i.special_price;
         }
-            console.log(i.id);
             output +=
                 "<div class = 'col-lg-3 col-md-4 col-sm-6'>" +
                 "<div class='item card pb-3 h-100 w-100'>" +
@@ -230,7 +227,6 @@ var cart = (function() {
 //Events
 
 $('.items').on("click", ".item-info", function(event) {
-    console.log($(this).data('idd'));
     var output = "";
     output =
         "<div>" +
@@ -264,7 +260,6 @@ $('.items').on("click", ".add-to-cart", function(event) {
 })
 
 $('.item-info-content').on("click", ".add-to-cart", function(event) {
-    // console.log($(this).data('name'));
     var name = $(this).data('name');
     var price = Number($(this).data('price'));
     var id = $(this).data('idd');
@@ -274,7 +269,6 @@ $('.item-info-content').on("click", ".add-to-cart", function(event) {
 
 
 $('.clear').click(function() {
-    console.log("clear");
     cart.clearCart();
     showCart();
 })

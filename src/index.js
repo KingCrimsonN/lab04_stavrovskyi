@@ -14,12 +14,23 @@ function sumbitPost(buyer, email, phone, cartarr){
     token: "DEj5VTbxAcdMLFT5vK2d",
     dataType: "JSON",
     data: type,
-    success: function(){
+    success: function(content){
+        console.log(content);
+        if (content.status==="success"){
         alert('Your order was successfuly ordered');
         cart.clearCart();
         showCart();
+        }
+        else {
+            var error_text = "";
+            for (var i of Object.values(content.errors))
+                error_text+=i + "; ";
+            alert(error_text);
+
+        }
     },
     error: function() {
+
         alert('Error while loading data!');
     },
 });
